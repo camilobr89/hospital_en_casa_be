@@ -24,7 +24,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 class User(AbstractBaseUser, PermissionsMixin):
-    id = models.BigAutoField(primary_key=True)
+    id = models.BigIntegerField('Cedula', primary_key=True)
     rol = models.CharField('Rol', max_length=50)
     name = models.CharField('Name', max_length = 30)
     last_name = models.CharField('Last Name', max_length = 30)

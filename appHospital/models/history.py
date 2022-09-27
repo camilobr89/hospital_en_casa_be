@@ -1,7 +1,7 @@
 from django.db import models
 
 class History(models.Model):
-    id = models.BigAutoField(primary_key=True)
+    id = models.BigIntegerField('Cedula', primary_key=True)
     oximetry = models.IntegerField('Oximetry', default=0)
     breathing_frequency = models.IntegerField('Breathing Frequency', default=0)
     heart_rate = models.IntegerField('Heart Rate', default=0)

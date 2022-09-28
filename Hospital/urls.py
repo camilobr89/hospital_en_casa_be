@@ -5,6 +5,6 @@ from appHospital import views
 urlpatterns = [
     path('login/', TokenObtainPairView.as_view()),
     path('refresh/', TokenRefreshView.as_view()),
-    path('user/', views.UserCreateView.as_view()),
-    path('user/<int:pk>/', views.UserDetailView.as_view()),
+    path('medical/', views.MedicalListCreateView.as_view()),
+    path('meical/<int:pk>/', views.MedicalRetrieveUpdateView.as_view()),
 ]

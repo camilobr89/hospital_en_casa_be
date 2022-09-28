@@ -1,3 +1,4 @@
+from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.contrib.auth.hashers import make_password
@@ -24,15 +25,15 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 class User(AbstractBaseUser, PermissionsMixin):
-    id = models.BigIntegerField('Cedula', primary_key=True)
-    rol = models.CharField('Rol', max_length=50)
-    name = models.CharField('Name', max_length = 30)
-    last_name = models.CharField('Last Name', max_length = 30)
-    cellphone = models.CharField('Cellphone', max_length = 30)
-    email = models.EmailField('Email', max_length = 100)
-    address = models.CharField('Address', max_length = 100)
-    username = models.CharField('Username', max_length = 15, unique=True)
-    password = models.CharField('Password', max_length = 256)
+    id = models.BigIntegerField(primary_key=True)
+    rol = models.CharField(max_length=50)
+    name = models.CharField(max_length = 30)
+    last_name = models.CharField(max_length = 30)
+    cellphone = models.CharField(max_length = 30)
+    email = models.EmailField(max_length = 100)
+    address = models.CharField(max_length = 100)
+    username = models.CharField(max_length = 15, unique=True)
+    password = models.CharField(max_length = 256)
     
     def save(self, **kwargs):
         some_salt = 'mMUj0DrIK6vgtdIYepkIxN'

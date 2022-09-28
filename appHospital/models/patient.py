@@ -6,9 +6,9 @@ from .nurse import Nurse
 from .history import History
 
 class Patient(models.Model):
-    id = models.BigIntegerField('Cedula', primary_key=True)
-    user_id = models.ForeignKey(User, related_name='patient', on_delete=models.CASCADE)
-    family_id = models.ForeignKey(Family, related_name='patient', on_delete=models.CASCADE)
-    medical_id = models.ForeignKey(Medical, related_name='patient', on_delete=models.CASCADE)
-    nurse_id = models.ForeignKey(Nurse, related_name='patient', on_delete=models.CASCADE)
-    history_id = models.ForeignKey(History, related_name='patient', on_delete=models.CASCADE)
+    id = models.BigIntegerField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    family = models.ForeignKey(Family, on_delete=models.CASCADE)
+    medical = models.ForeignKey(Medical, on_delete=models.CASCADE)
+    nurse = models.ForeignKey(Nurse, on_delete=models.CASCADE)
+    history = models.ForeignKey(History, on_delete=models.CASCADE)

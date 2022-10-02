@@ -1,0 +1,10 @@
+from django.urls import path
+from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
+from appHospital import views
+
+urlpatterns = [
+    path('login/', TokenObtainPairView.as_view()),
+    path('refresh/', TokenRefreshView.as_view()),
+    path('medical/', views.MedicalListCreateView.as_view()),
+    path('meical/<int:pk>/', views.MedicalRetrieveUpdateView.as_view()),
+]

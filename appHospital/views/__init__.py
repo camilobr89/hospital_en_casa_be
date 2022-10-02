@@ -1,0 +1,1 @@
+from .medicalView import MedicalListCreateView, MedicalRetrieveUpdateView
